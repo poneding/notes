@@ -1,10 +1,10 @@
-# Docker-拷贝容器内文件
+# Docker 主机容器互拷贝文件
 
 命令：`docker cp`
 
-## 1. 将Docker容器内文件拷贝到Host
+## 1. 将 Docker 容器内文件拷贝到 Host
 
- 获取docker容器的Container ID或Name
+ 获取 docker 容器的 Container ID 或Name
 
 ```shell
 sudo docker ps
@@ -18,7 +18,7 @@ sudo docker ps
 sudo docker cp [CONTAINER ID/NAME]:[CONTAINER_PATH] [HOST_PATH]
 ```
 
-例如我需要将容器内/app/appsettings.json文件拷贝到宿主机的~/temp/目录***（该目录必须存在）***下
+例如我需要将容器内 `/app/appsettings.json` 文件拷贝到宿主机的 `~/temp/` 目录 ***（该目录必须存在）*** 下
 
 ```shell
 sudo docker cp b3e608e28f21:/app/appsettings.json ~/temp/appsettings.json
@@ -26,9 +26,9 @@ sudo docker cp b3e608e28f21:/app/appsettings.json ~/temp/appsettings.json
 sudo docker cp b3e608e28f21:/app/appsettings.json ~/temp/
 ```
 
-## 2. 将Host文件拷贝至Docker容器
+## 2. 将 Host 文件拷贝至 Docker 容器
 
-同样，需要先获取容器的Container ID或Name；
+同样，需要先获取容器的 Container ID 或 Name；
 
 使用以下命令将文件拷贝至容器内
 
@@ -36,7 +36,7 @@ sudo docker cp b3e608e28f21:/app/appsettings.json ~/temp/
 sudo docker cp [HOST_PATH] [CONTAINER ID/NAME]:[CONTAINER_PATH]
 ```
 
-例如我需要将宿主机的~/temp/hello.txt文件拷贝至容器内/app/目录***（该目录必须存在）***下
+例如我需要将宿主机的 `~/temp/hello.txt` 文件拷贝至容器内 `/app/` 目录 ***（该目录必须存在）*** 下
 
 ```shell
 sudo docker cp ~/temp/hello.txt b3e608e28f21:/app/hello.txt 

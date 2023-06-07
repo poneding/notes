@@ -101,4 +101,3 @@ CMD ["/bin/sh", "-c", "echo ${USERNAME}"] # 输出 dp
 docker build . -t echo-user --build-arg USERNAME=dp
 docker run echo-user
 ```
-

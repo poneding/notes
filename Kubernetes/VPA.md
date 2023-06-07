@@ -1,6 +1,4 @@
-# Kubernetes 0-1 VPA
-
-我们可能都知道HPA（Her
+# VPA
 
 ## 安装
 

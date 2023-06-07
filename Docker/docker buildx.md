@@ -1,4 +1,4 @@
-# Docker 0-1 buildx
+# docker buildx
 
 ```bash
 $ docker buildx
@@ -29,11 +29,11 @@ Commands:
 Run 'docker buildx COMMAND --help' for more information on a command.
 ```
 
-本篇介绍如何使用`docker buildx`命令实现交叉编译不同系统架构下的Docker镜像。
+本篇介绍如何使用 `docker buildx` 命令实现交叉编译不同系统架构下的 Docker 镜像。
 
 ## 安装
 
-如果根据docker官网的安装手册安装docker，会默认安装`docker buildx`。
+如果根据 docker 官网的安装手册安装 docker，会默认安装 `docker buildx`。
 
 参照文档：[Docker Buildx | Docker Documentation](https://docs.docker.com/buildx/working-with-buildx/)
 
@@ -50,7 +50,7 @@ mv buildx-v0.8.1.linux-amd64 $HOME/.docker/cli-plugins/docker-buildx
 
 ## 将buildx设置成默认的镜像编译器
 
-因为`docker buildx build`命令后续的大部分参数与`docker build`完全一致，所以可以通过设置命令别名的方式，将buildx作为默认的镜像编译器。
+因为 `docker buildx build` 命令后续的大部分参数与 `docker build` 完全一致，所以可以通过设置命令别名的方式，将 buildx 作为默认的镜像编译器。
 
 你只需要执行以下命令即可：
 
@@ -66,7 +66,7 @@ docker buildx uninstall
 
 ## 使用
 
-开始一个新的构建，执行命令`docker buildx build .`。
+开始一个新的构建，执行命令 `docker buildx build .`。
 
 创建实例
 
