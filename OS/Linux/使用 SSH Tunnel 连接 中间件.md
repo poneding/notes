@@ -1,4 +1,4 @@
-# 使用 SSH Tunnel 连接 RDB/NoSql
+# 使用 SSH Tunnel 连接中间件
 
 ## 背景
 

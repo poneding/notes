@@ -5,14 +5,14 @@
 ```powershell
 cd ..		切换到上一级目录
 cd ../..	切换到上两级目录
-cd [dir]		进入dir目录
+cd [dir]		进入 dir 目录
 cd			进入个人的主目录
 cd ~[username]	进入个人的主目录
 cd -		进入上次目录
 
 pwd 	查看目录路径 
 ls		查看当前目录下的目录和文件（不包含隐藏目录或文件）
-ls -a	查看当前目录下的所有目录和文件s
+ls -a	查看当前目录下的所有目录和文件
 ls -F	查看当前目录下的文件 （不包含目录和隐藏文件）
 ls -l	查看文件和目录的详细资料 
 ls *[0-9]*	查看包含字符的文件和目录
@@ -25,14 +25,14 @@ rm -f file1 删除文件
 rmdir dir1	删除空
 rm -rf dir1	删除包含内容的目录
 rm -rf dir1 dir2 删除多个目录
-mv dir1 dir2	重命名或移动一个目录（看dir2是否存在）
+mv dir1 dir2	重命名或移动一个目录（看 dir2 是否存在）
 cp file1 file2 	复制文件
 cp dir/* .	复制某目录下所有内容到当前目录
 cp -a dir1/dir2 .		复制目录下所有内容到当前目录
 cp -a dir1 dir2		复制一个目录
 
-ln -s dir1|file1 link1	创建文件或目录link的软件链接
-ln dir1|file1 link1		创建文件或目录link的物理链接，也叫硬链接
+ln -s dir1|file1 link1	创建文件或目录 link 的软件链接
+ln dir1|file1 link1		创建文件或目录 link 的物理链接，也叫硬链接
 [
 	软链接和物理链接的区别：
 	1. 软链接可以用于目录和文件，物理链接只能用于文件；
@@ -42,9 +42,9 @@ ln dir1|file1 link1		创建文件或目录link的物理链接，也叫硬链接
 find /home/[user] -name		某目录下搜索文件
 find ~ -iname '*test*'  # iname 忽略大小写
 
-zip file1.zip file1 file2 dir1 	将文件和目录压缩成zip文件（dir不包含内容）
-zip -r file1.zip file1 file2 dir1	将文件和目录压缩成zip文件（dir包含内容）
-unzip file1.zip		解压zip文件
+zip file1.zip file1 file2 dir1 	将文件和目录压缩成 zip 文件（dir 不包含内容）
+zip -r file1.zip file1 file2 dir1	将文件和目录压缩成 zip 文件（dir 包含内容）
+unzip file1.zip		解压 zip 文件
 tar -zxvf ***.tar.gz
 
 cat file1		查看一个文件
@@ -54,7 +54,7 @@ less file1 		类似于 'more' 命令，但是它允许在文件中和正向操�
 head -2 file1 	查看一个文件的前两行 
 tail -2 file1 	查看一个文件的最后两行 
 
-grep hello file1	查询关键字‘hello’
+grep hello file1	查询关键字 ‘hello’
 dump -0aj -f /tmp/home0.bak /home 制作一个 '/home' 目录的完整备份 
 dump -1aj -f /tmp/home0.bak /home 制作一个 '/home' 目录的交互式备份 
 
@@ -109,19 +109,19 @@ $ mv /path/to/wrongfile /some/other/place
 mv: cannot stat '/path/to/wrongfile': No such file or directory
 $ mv /path/to/rightfile !$
 
-# 上行命令的第n个参数，0,1,2,..,n !:n
+# 上行命令的第 n 个参数，0,1,2,..,n !:n
 $ tar -cvf afolder afolder.tar	# 写反参数
 tar: failed to open
 $ !:0 !:1 !:3 !:2
 tar -cvf afolder.tar afolder
 
 # 上行命令参数范围 
-$ grep '(ping|pong)' afile	# 写错egrep
-# Linux下grep显示前后几行信息
-# 标准unix/linux下的grep通过下面參数控制上下文
-grep -C 5 foo file 显示file文件里匹配foo字串那行以及上下5行
-grep -B 5 foo file 显示foo及前5行
-grep -A 5 foo file 显示foo及后5行
+$ grep '(ping|pong)' afile	# 写错 egrep
+# Linux 下 grep 显示前后几行信息
+# 标准 unix/linux 下的 grep 通过下面參数控制上下文
+grep -C 5 foo file 显示 file 文件里匹配 foo 字串那行以及上下 5 行
+grep -B 5 foo file 显示 foo 及前 5 行
+grep -A 5 foo file 显示 foo 及后 5 行
 
 $ egrep !:1-$
 egrep '(ping|pong)' afile
@@ -139,18 +139,18 @@ sudo ssh -i xxx.pem ubuntu@192.168.1.1
 # 远程直接进入某目录
 sudo ssh -i xxx.pem ubuntu@192.168.1.1 -t '/some/path; bash --login'
 
-# linux系统间文件复制
+# linux 系统间文件复制
 sudo scp -i ~/dp/k8s.dp.io/.ssh/id_rsa /home/ubuntu/hello.txt admin@bastion-k8s-dp-com-qcojf8-1198362181.ap-southeast-1.elb.amazonaws.com:~/
 
-# shell文件出错即退出
+# shell 文件出错即退出
 #!/usr/bin/env bash
 set -e -o pipefail
 
-# 查看系统是32位还是64位
+# 查看系统是 32 位还是 64 位
 uname -a
 
-# 退出telnet
-ctrl+]，然后输入quit
+# 退出 telnet
+ctrl+]，然后输入 quit
 # base64 编码&反编码
 echo -n "JayChou" | base64
 echo -n SmF5Q2hvdQ== | base64 --decode
@@ -173,7 +173,7 @@ sudo dhclient
 sudo yum update -y
 su root
 vi /etc/sudoers
-# root	ALL=(ALL)	ALL后添加
+# root	ALL=(ALL)	ALL 后添加
 xxx  ALL=(ALL)   ALL
 # 或者
 xxx  ALL=(ALL)   NOPASSWD: ALL  （不用密码）
@@ -199,16 +199,6 @@ du -sh /path/*
 
   下载地址：http://mirrors.aliyun.com/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-2003.iso
 
-- **虚拟化软件**
-
-  VMWare 15 Pro
-
-  下载地址：https://download3.vmware.com/software/wkst/file/VMware-workstation-full-15.5.2-15785246.exe
-
-  License Key: FU512-2DG1H-M85QZ-U7Z5T-PY8ZD
-
-  使用windows自带的Hyper-V也可以，但是我觉得用起来没有那么顺手。
-
 ## Kitematic
 
 Download: https://github.com/docker/kitematic/releases
@@ -228,20 +218,20 @@ reboot ubutnu, then using Kitematic.
 
 ## sed替换文本
 
-比如hello.txt文本中内容如下：
+比如 `hello.txt` 文本中内容如下：
 
 ```txt
 hello, Name!
 ```
 
-现使用真实Name替换掉#Name#。
+现使用真实 Name 替换掉 #Name#。
 
 ```bash
 export Name=JayChou
 sed -i "s/Name/$Name/g" hello.txt
 ```
 
-但是如果替换的文本中包含`/`的话，那么上面这个命令会失败：`sed: -e expression #1, char 12: unknown option to`
+但是如果替换的文本中包含 `/` 的话，那么上面这个命令会失败：`sed: -e expression #1, char 12: unknown option to`
 
 例如
 
@@ -250,7 +240,7 @@ export Name=Jay/Chou
 sed -i "s/Name/$Name/g" hello.txt
 ```
 
-这里为了保留被替换文本的`/`，有两种方法
+这里为了保留被替换文本的 `/`，有两种方法
 
 1. 在被替换文本中使用转义符号：
 
@@ -259,7 +249,7 @@ sed -i "s/Name/$Name/g" hello.txt
    sed -i "s/Name/$Name/g" hello.txt
    ```
 
-2. 使用`#`代替`/`作为sed中替换与被替换字符的分割符：
+2. 使用 `#` 代替 `/` 作为 sed 中替换与被替换字符的分割符：
 
    ```bash
    export Name=Jay/Chou
@@ -301,14 +291,14 @@ sudo apt-get autoremove       删除系统不再使用的孤立软件
 
 这三个命令主要清理升级缓存以及无用包的。
 
-2，清理opera firefox的缓存文件：
+2，清理 opera firefox 的缓存文件：
 
 ```bash
 ls ~/.opera/cache4
 ls ~/.mozilla/firefox/*.default/Cache
 ```
 
-3，清理Linux下孤立的包：
+3，清理 Linux 下孤立的包：
 终端命令下我们可以用：
 
 ```bash
@@ -316,7 +306,7 @@ sudo apt-get install deborphan -y
 ```
 
 4，卸载：tracker
-这个东西一般我只要安装ubuntu就会第一删掉tracker 他不仅会产生大量的cache文件而且还会影响开机速度。再软件中心删除。
+这个东西一般我只要安装 ubuntu 就会第一删掉 tracker 他不仅会产生大量的 cache 文件而且还会影响开机速度。再软件中心删除。
 
 附录：
 包管理的临时文件目录:
@@ -327,7 +317,7 @@ sudo apt-get install deborphan -y
 
 二、删除软件
 
-ubuntu软件的删除一般用“ubuntu软件中心”或“新立得”就能搞定，但有时用命令似乎更快更好～～
+ubuntu 软件的删除一般用“ubuntu 软件中心”或“新立得”就能搞定，但有时用命令似乎更快更好～～
 
 ```bash
 sudo apt-get remove --purge 软件名
@@ -340,7 +330,7 @@ dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P       清除残余的配�
 
 三、删除多余内核
 
-1，首先要使用这个命令查看当前Ubuntu系统使用的内核
+1，首先要使用这个命令查看当前 Ubuntu 系统使用的内核
 
 ```bash
 uname -a

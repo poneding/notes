@@ -27,3 +27,19 @@ sudo lsof -i tcp:[port]
 # [PID] 替换成程序的进程 PID
 sudo kill -9 [PID]
 ```
+
+## 重置 Downie 试用
+
+```bash
+rm -rfv ~/Library/Containers/com.charliemonroe.Downie-4/Data/Library/Application\ Support/Downie\ 4
+```
+
+配置快捷命令：
+
+```bash
+vim ~/.zsh
+
+alias reset-downie-trial='rm -rfv ~/Library/Containers/com.charliemonroe.Downie-4/Data/Library/Application\ Support/Downie\ 4'
+
+```
+
